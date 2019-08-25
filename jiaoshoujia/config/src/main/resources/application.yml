@@ -1,0 +1,21 @@
+server:
+  port: 8888
+  git:
+    uri: https://github.com/shmilyah/cloud-config-samples.git
+    search-paths: '{application}'
+eureka:
+  client:
+   serviceUrl:
+    defaultZone: http://localhost:7070/eureka/
+spring:
+  application:
+    name: cloud-config
+  profiles:
+   active: native
+  cloud:
+   config:
+    server:
+     native:
+      searchLocations:
+       classpath: /properties/
+

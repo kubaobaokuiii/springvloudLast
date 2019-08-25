@@ -1,0 +1,18 @@
+server:
+    port: 8761
+
+eureka:
+    instance:
+        hostname: localhost
+    #当前eureka server 即是服务器又是客户端,所以需要作为客户端进行配置
+    client:
+        # 是否注册到eureka false表明了自己就是eureka server
+        registerWithEureka: false
+        fetchRegistry: false
+        # 注册中心的url地址,这里其实就是自己
+    serviceUrl:
+        defaultZone : http://${eureka.instance.hostname}:${server.port}/eureka/
+spring:
+  application:
+    name: server
+

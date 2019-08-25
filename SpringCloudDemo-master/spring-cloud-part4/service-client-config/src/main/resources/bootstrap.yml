@@ -1,0 +1,32 @@
+# bootstrap优先加载
+server:
+  port: 8888
+
+spring :
+  application :
+    #配置服务名
+    name: config-client
+  cloud:
+    config:
+      profile: dev
+      label: master
+      # 指定哪个配置文件
+      name: demo
+#      uri: http://localhost:8088/server-config
+      discovery:
+        enabled: true
+        #指定config_server端的name,也就是配置中心的server
+        service-id: server-config
+
+eureka:
+  client:
+    #当前eureka是客户端,所以只需要配置服务注册的地址,因为需要启动就读取配置中心的配置,所以eureka放在bootstrap中优先读取
+    serviceUrl:
+      defaultZone:  http://localhost:8762/eureka_config/eureka/
+
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: refresh,health

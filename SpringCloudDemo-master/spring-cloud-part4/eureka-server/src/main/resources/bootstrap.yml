@@ -1,0 +1,24 @@
+server:
+  port: 8761
+  servlet:
+    context-path: /eureka_server
+
+spring:
+  application:
+    name: server
+
+
+eureka:
+  instance:
+    hostname: localhost
+  #当前eureka server 即是服务器又是客户端,所以需要作为客户端进行配置
+  client:
+    # 是否注册到eureka false表明了自己就是eureka server
+    registerWithEureka: false
+    fetchRegistry: false
+    # 注册中心的url地址,这里其实就是自己
+  serviceUrl:
+    defaultZone : http://${eureka.instance.hostname}:${server.port}/eureka/
+  server:
+    enable-self-preservation: false # 关闭自我保护模式（缺省为打开）,打开的话不再删除服务注册表中的数据（也就是不会注销任何微服务）
+    eviction-interval-timer-in-ms: 60000 # 清理无效节点的时间间隔(毫秒)默认60秒

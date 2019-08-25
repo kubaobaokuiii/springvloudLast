@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: zuul_service
+server:
+  port: 9000
+
+zuul:
+  routes:
+    user-service: /apigateway/user/**
+    order-service: /apigateway/**
+    hang-ban-service: /apigateway/hangBan/**
+    web-before-service: /apigateway/**
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka

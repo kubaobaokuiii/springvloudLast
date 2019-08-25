@@ -1,0 +1,11 @@
+eureka:
+  client:
+   serviceUrl:
+    defaultZone: http://localhost:7070/eureka/
+spring:
+  application:
+    name: cloud-server1
+  cloud:
+   config:
+    profile: dev
+   label: master

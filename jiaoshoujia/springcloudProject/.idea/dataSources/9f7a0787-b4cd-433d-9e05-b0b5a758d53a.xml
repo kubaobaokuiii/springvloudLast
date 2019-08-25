@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="mysql@localhost">
+  <database-model serializer="dbm" dbms="MYSQL" family-id="MYSQL" format-version="4.14">
+    <root id="1">
+      <ServerVersion>5.0.24</ServerVersion>
+      <DefaultCasing>lower/lower</DefaultCasing>
+    </root>
+    <schema id="2" parent="1" name="guoadmin"/>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql">
+      <Current>1</Current>
+    </schema>
+    <schema id="5" parent="1" name="test"/>
+    <schema id="6" parent="1" name="user">
+      <Visible>1</Visible>
+    </schema>
+  </database-model>
+</dataSource>

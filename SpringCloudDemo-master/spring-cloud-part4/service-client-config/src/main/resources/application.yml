@@ -1,0 +1,13 @@
+logging:
+  level:
+    com.netflix: info
+
+eureka:
+  client:
+    healthcheck: # 开启健康检查（需要spring-boot-starter-actuator依赖）只应该在application.yml中设置。
+      #如果设置在bootstrap.yml中将会导致一些不良的副作用，例如在Eureka中注册的应用名称是UNKNOWN等
+      enabled: true
+    instance:
+      lease-expiration-duration-in-seconds: 10 # eureka至上一次收到心跳后,等待下次心跳的超时时间,超过此时间移除该服务（默认90秒）
+      lease-renewal-interval-in-seconds: 10 # 心跳发送时间
+    registry-fetch-interval-seconds: 30 # 表示eureka client间隔多久去拉取服务注册信息，默认为30秒

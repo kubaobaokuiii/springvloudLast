@@ -1,0 +1,10 @@
+server:
+    port: 8083
+
+eureka:
+    #当前eureka是客户端,所以只需要配置服务注册的地址
+    serviceUrl:
+        defaultZone : http://localhost:8761/eureka/
+spring:
+  application:
+    name: client01

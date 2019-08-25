@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.springboottest.mapper.LoginUserMapper">
+    <resultMap id="loginUser" type="guo.cloud.api.model.LoginUser">
+        <result column="id" property="id"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="card" property="card"/>
+        <result column="birthday" property="birthday"/>
+        <result column="age" property="age"/>
+        <result column="sex" property="sex"/>
+        <result column="adress" property="adress"/>
+    </resultMap>
+
+    <insert id="save" parameterType="loginUser">
+          insert into login_user(username,password,card,birthday,age,sex,adress) values (#{name},#{pwd},#{card},#{birthday},#{age},#{sex},#{adress})
+    </insert>
+
+</mapper>
+
